@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import React, { Suspense } from 'react'
 import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom'
+import { RecoilRoot } from 'recoil'
 const Landing = React.lazy(() => import('../components/Landing'))
 const Signin = React.lazy(() => import('../components/Signin'))
 const Signup = React.lazy(() => import('../components/Signup'))
@@ -13,7 +14,7 @@ const AddCourse = React.lazy(() => import('../components/AddCourse'))
 function App() {
 
   return (
-    <>
+    <><RecoilRoot>
       <BrowserRouter>
         <Suspense fallback={<div>Loading..</div>}>
           <Routes>
@@ -25,6 +26,7 @@ function App() {
           </Routes>
         </Suspense>
       </BrowserRouter>
+    </RecoilRoot>
     </>
   )
 
